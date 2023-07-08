@@ -2,8 +2,8 @@
 Transformers, Protein Sequences, and Persistent Homology
 
 <details>
-  <summary>Click to expand</summary>
-- [Clustering protein sequences](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/esm_2_clustering.ipynb) using ESM-2, persistent homology, and various clustering algorithms.
+  <summary>[Clustering protein sequences](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/esm_2_clustering.ipynb)</summary>
+- using ESM-2, persistent homology, and various clustering algorithms.
 </details>
 
 - [Computing simplex trees](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/simplex_trees_esm2.ipynb) Simplex Trees from Context Vectors of ESM-2. This can be used for sequential and structural motif discovery. 
