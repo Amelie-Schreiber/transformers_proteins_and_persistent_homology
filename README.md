@@ -2,7 +2,7 @@
 
 ## Topic Modeling for Proteins
 
-This project is the equivalent of [BERTopic](https://maartengr.github.io/BERTopic/index.html) for proteins. Specifically, we plan to add persistent homology to the [hierarchical clustering algorithms](https://maartengr.github.io/BERTopic/getting_started/hierarchicaltopics/hierarchicaltopics.html) and use [ESM-2/ESMFold](https://huggingface.co/docs/transformers/model_doc/esm) in place of BERT. We also plan to eventually add other models to the list of protein language models. Topic modeling for proteins can be thought of as a kind of phenotype/tertiary structure/functional modeling that takes into acount things like arrangements of secondary structure, binding sites, and the syntax and semantics of the language of life. 
+This project is the equivalent of [BERTopic](https://maartengr.github.io/BERTopic/index.html) for proteins. Specifically, we plan to add persistent homology to the [hierarchical clustering algorithms](https://maartengr.github.io/BERTopic/getting_started/hierarchicaltopics/hierarchicaltopics.html) and use [ESM-2/ESMFold](https://huggingface.co/docs/transformers/model_doc/esm) in place of BERT. We also plan to eventually add other models to the list of protein language models. Topic modeling for proteins can be thought of as a kind of phenotype, tertiary structure, functional modeling that takes into acount things like arrangements of secondary structure, binding sites, and the syntax and semantics of the language of life. 
 
 ## Interpretability
 
