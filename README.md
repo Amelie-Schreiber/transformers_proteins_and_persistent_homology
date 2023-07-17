@@ -11,7 +11,16 @@ This is also an interpretability project. It was shown already in [BERTology Mee
 
 
 ## Transformers, Protein Sequences, and Persistent Homology
-Here are a few of the notebooks:
+
+### Protein Topic Modeling Notebooks
+
+-[Clustering Proteins](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/clustering_esm2_pipeline.ipynb)
+
+-[Extracting and Visualizing Substructures](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/extracting_substructures_esm2.ipynb)
+
+
+### Interpretability
+Here are a few of the notebooks for model interpretability:
 
 - [Clustering protein sequences](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/esm_2_clustering.ipynb) using ESM-2, persistent homology, and various clustering algorithms.
 - [Computing simplex trees](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/simplex_trees_esm2.ipynb) Simplex Trees from Context Vectors of ESM-2. This can be used for sequential and structural motif discovery. 
