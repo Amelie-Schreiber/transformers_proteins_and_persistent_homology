@@ -29,8 +29,7 @@ These notebooks use the last hidden states of the model.
 2. [Extracting Simplex Trees](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/simplex_trees_esm2_layer.ipynb): This is similar to constituency or dependency parse trees. It shows the importance the model assigns to each simplex. Searching for simplices with low filtration values of a particular length allows us to identify substructures of residues  of a particular length, like candidate motifs, candidate binding sites, or sites of mutations that cause topological changes in conformational states.
 3. [Clustering Proteins](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/clustering_esm2_pipeline.ipynb): This is similar to text corpus and document clustering based on the themes present in the texts. It often captures tertiary structural themes, conformational states, and topology and groups proteins based on this.
 
-<img src="https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/cluster7.png
-" alt="Cluster 7 of ESM-2" width="400"/>
+<img src="https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/cluster7.png" alt="Cluster 7 of ESM-2" width="400"/>
 
 
 ### Model Interpretability
