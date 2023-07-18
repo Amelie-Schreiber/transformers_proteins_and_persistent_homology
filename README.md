@@ -94,6 +94,26 @@ To further include invariant persistent homology as an inductive bias:
 3. Contrastive Learning: We could use a contrastive learning approach, where pairs of internal representations of the same motif in different contexts are pushed to be similar (small Wasserstein distance), while representations of different motifs are pushed to be different (large Wasserstein distance).
 
 
+## Denoising Diffusion Probabilistic Models for Generating Proteins
+
+Incorporating a topological inductive bias into a generative diffusion model, specifically a Denoising Diffusion Probabilistic Model (DDPM), enables the generation of novel protein sequences that retain critical topological invariances. We plan to use ESMFold as the backbone transformer. Given a protein motif, let $\mathcal{D}_P$ denote the "ground truth" persistence diagram, which we obtain from the persistent homology of the motif within the original protein sequences. Let $\mathcal{D}_M$ denote the persistence diagram derived from the persistent homology of the model's internal representation of the motif (encompassing attention probabilities, context vectors, or hidden states). We use the Wasserstein distance, denoted as $W(\cdot, \cdot)$, to quantify the difference between these diagrams. 
+
+Formally, the Wasserstein distance is defined as:
+
+\begin{equation}
+d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}M) = \left( \inf{\gamma\in \Gamma(\mathcal{D}_P, \mathcal{D}M)} \int{\mathcal{D}_P \times \mathcal{D}_M} ||x - y||^q_p d\gamma(x, y) \right)^{1/q}
+\end{equation}
+
+where $\Gamma(\mathcal{D}_P, \mathcal{D}_M)$ is the set of all joint measures on $\mathcal{D}_P \times \mathcal{D}_M$ with marginals respectively $\mathcal{D}_P$ and $\mathcal{D}_M$. The $||x - y||^q_p$ denotes the $L_p$-norm raised to the power $q$. 
+
+The loss function used to train the model, $L_{\text{total}}$, can be augmented by a term $\lambda W(\mathcal{D}_P, \mathcal{D}_M)$, with $\lambda > 0$ being a hyperparameter. Thus, we have:
+
+\begin{equation}
+L_{\text{total}} = L_{\text{task}} + \lambda d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M)
+\end{equation}
+
+where $L_{\text{task}}$ is the base loss function, such as the negative log-likelihood. By minimizing $L_{\text{total}}$, the DDPM learns to generate protein sequences where the topological features of key motifs remain invariant, thus enhancing the biological plausibility of generated sequences. It is worth noting that this approach increases the complexity of model training, hence necessitating efficient algorithms for persistence diagram computation and optimal transport problem solving.
+
 
 ## Future Directions
 
