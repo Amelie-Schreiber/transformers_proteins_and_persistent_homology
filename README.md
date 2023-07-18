@@ -1,4 +1,3 @@
-
 ---
 
 # ESMTopic: Transformers, Proteins, and Persistent Homology
@@ -7,6 +6,7 @@
 
 ![Substructure of KaiB](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/KaiB.png)
 
+<img src="https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/KaiB.png" alt="drawing" width="200"/>
 
 ## Introduction
 
