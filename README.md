@@ -25,8 +25,8 @@ We have developed several Jupyter notebooks to illustrate the methodologies and 
 ### Protein Topic Modeling
 These notebooks use the last hidden states of the model. 
 
-1. [Clustering Proteins](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/clustering_esm2_pipeline.ipynb)
-2. [Extracting and Visualizing Substructures](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/extracting_substructures_esm2.ipynb)
+1. [Clustering Proteins](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/clustering_esm2_pipeline.ipynb): This is similar to text corpus and document clustering based on the themes present in the texts. It often captures tertiary structural themes, conformational states, and topology and groups proteins based on this. 
+2. [Extracting and Visualizing Substructures](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/extracting_substructures_esm2.ipynb): This is similar to extracting keyphrases, collocations, multiword expressions, and idioms from text. It includes a way of visualizing the substructure in the $3D$-fold predicted by ESMFold. 
 
 ### Model Interpretability
 
@@ -51,8 +51,9 @@ Our project is an ongoing effort, and we aim to further expand our understanding
 
 1. Investigating topological changes in protein structures under mild sequence mutations.
 2. Understanding the impact of protein sequence changes on conformational states.
-3. Developing topological inductive biases for fine-tuning ESMFold for generative protein diffusion models (denoising diffusion probabilistic model or DDPM) and downstream tasks like detection of point mutations that cause topological changes. 
-4. Exploring the potential of quantum computing for speeding up computations in high-dimensional homology groups (see [this paper](https://quantum-journal.org/papers/q-2022-12-07-873/), [this paper](https://arxiv.org/abs/2202.12965), and [this paper](https://www.nature.com/articles/ncomms10138)) .
+3. Developing topological inductive biases for fine-tuning ESMFold for generative protein diffusion models (denoising diffusion probabilistic model or DDPM) and downstream tasks like detection of point mutations that cause topological changes.
+4. Developing topological loss functions as regularizers or to include a topological inductive bias such as invariance of persistent homology for motifs or important substructures. 
+5. Exploring the potential of quantum computing for speeding up computations in high-dimensional homology groups, for very long protein sequences with thousands of residues or more, or for large collections of proteins (see [this paper](https://quantum-journal.org/papers/q-2022-12-07-873/), [this paper](https://arxiv.org/abs/2202.12965), and [this paper](https://www.nature.com/articles/ncomms10138)). While quantum advantage is proven in the above articles, it is not clear to what extent this is needed. 
 
 By integrating insights from transformer models, persistent homology, and other computational tools, we hope to deepen our understanding of the complex language of life encoded in proteins.
 
