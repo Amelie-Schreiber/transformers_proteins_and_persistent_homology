@@ -18,30 +18,13 @@ As part of our project, we will incorporate persistent homology, a concept from 
 
 Our project is not only about modeling proteins but also about interpreting these models. We aim to understand how attention mechanisms in transformer models learn to recognize and represent biologically significant information. We're inspired by the study "[BERTology Meets Biology: Interpreting Attention in Protein Language Models](https://arxiv.org/abs/2006.15222)", which demonstrated that transformer models can specialize in detecting various protein features, from individual amino acids to complex structures like binding sites. We approach the problems of understanding attention, context vectors, and hidden states in this project, using the tools of persistent homology, multi-scale DBSCAN, and HDBSCAN, to analyze what regions of proteins ESM-2's heads and layers are paying attention to, how the model's heads and layers are clustering those regions at different scales, and how the model clusters collections of proteins. This interpretability aspect of the project can aid in the design of specialized heads or layers, or in knowledge distillation procedures. 
 
-## Topological Inductive Biases from Topological Loss Functions
-
-This project also aims to include a topological inductive biases, such as invariant persistent homology of motifs or other substructures, via the inclusion of a topological loss function. The model's inner representations of proteins, such as attention probability distributions, context vectors, or hidden states each have a persistent homology persistence diagram associated to them. These persistence diagrams can be compared using the Wassserstein distance metric. It may be beneficial for the persistent homology of a substructure like a specialized binding site, or a secondary structural motif ($\alpha \beta \alpha$ for example) to remain invariant even it they appears in different contexts. That is, we are interested in the model's internal representations maintaining consistent topological features when representing the same protein motif in different contexts. This involves applying persistent homology to the model's internal representations, such as attention probability distributions, context vectors, or hidden states, when processing this motif, rather than to the protein's structural data. The goal is to encourage the model to recognize and consistently represent the motif's invariant features, regardless of its context. This imposes a topological constraint on the context vectors and their positions relative to each other, but it does not impose any constraint on what values they can take. We can add a term to the loss function which includes this inductive bias into the model. 
-
-1. For a given motif, collect a set of internal representations corresponding to its occurrence in different proteins.
-2. Compute the persistent homology for each of these to generate a set of persistence diagrams.
-3. Compute a "reference" persistence diagram for the motif, either by averaging the above diagrams using the Fréchet mean diagram or by some other method.
-4. For each occurrence of the motif, compute the Wasserstein distance between its persistence diagram and the reference diagram.
-5. Average these distances to compute a single loss value for the motif.
-6. Repeat this process for each motif of interest and sum the results to produce the final topological loss term.
-
-This term can be added to the overall model loss, alongside any other terms used to train the model (such as cross-entropy loss for predicting the next amino acid in a protein sequence). By minimizing this combined loss, the model will be encouraged to develop internal representations that consistently capture the invariant features of each motif, as encoded by their persistent homology.
-
-To further include invariant persistent homology as an inductive bias:
-
-1. Custom Layers: We could design custom layers that directly use the concept of persistent homology. These layers could be trained to output similar embeddings when the same motif is fed into the model, regardless of the protein in which the motif is embedded. Remember, this does not constrain the values of the hidden states, only their relative distances do one another (and thus their persistent homology). 
-2. Multi-task Learning: We could design a multi-task learning setup where one task is to predict some property of the protein and the other is to minimize the variance of the persistent homology of a motif's internal representations across different contexts.
-3. Contrastive Learning: We could use a contrastive learning approach, where pairs of internal representations of the same motif in different contexts are pushed to be similar (small Wasserstein distance), while representations of different motifs are pushed to be different (large Wasserstein distance).
-
 ## Notebooks
 
-We have developed several Jupyter notebooks to illustrate the methodologies and techniques used in our project:
+---
 
-### Protein Topic Modeling
+We have developed several notebooks to illustrate the methodologies and techniques used in our project:
+
+## Protein Topic Modeling
 These notebooks use the last hidden states of the model. 
 
 1. [Extracting and Visualizing Substructures](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/extracting_substructures_esm2.ipynb): This is similar to extracting keyphrases, collocations, multiword expressions, and idioms from text. It includes a way of visualizing the substructure in the $3D$-fold predicted by ESMFold.
@@ -62,9 +45,9 @@ These notebooks use the last hidden states of the model.
 
 
 
-### Model Interpretability
+## Model Interpretability
 
-#### Context Vectors of Individual Attention Heads
+### Context Vectors of Individual Attention Heads
 These notebooks focus on using context vectors for individual attention heads. This gives us a way to see what individual attention heads have learned to focus on and model well at the level of context vectors, computed prior to layer normalization and the MLP. 
 
 1. [Clustering Protein Sequences using context vectors](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/esm_2_clustering.ipynb)
@@ -77,6 +60,27 @@ These notebooks focus on using context vectors for individual attention heads. T
 These notebooks focus on using attention probability distributions  for individual attention heads. These are given by the softmax rows of the attention matrix, using the Jensen-Shannon distance metric to compute the distance matrix for persistent homology. This gives us a way to see what individual attention heads have learned to focus on and model well. 
 
 Notebooks coming soon...
+
+
+## Topological Inductive Biases from Topological Loss Functions
+
+This project also aims to include a topological inductive biases, such as invariant persistent homology of motifs or other substructures, via the inclusion of a topological loss function. The model's inner representations of proteins, such as attention probability distributions, context vectors, or hidden states each have a persistent homology persistence diagram associated to them. These persistence diagrams can be compared using the Wassserstein distance metric. It may be beneficial for the persistent homology of a substructure like a specialized binding site, or a secondary structural motif ($\alpha \beta \alpha$ for example) to remain invariant in a particular head or layer, even it the substructure appears in different contexts. That is, we are interested in the model's internal representations maintaining consistent topological features when representing the same protein motif in different contexts. This involves applying persistent homology to the model's internal representations, such as attention probability distributions, context vectors, or hidden states, when processing this motif, rather than to the protein's structural data. The goal is to encourage the model to recognize and consistently represent the motif's invariant features, regardless of its context. This imposes a topological constraint on the context vectors and their positions relative to each other, but it does not impose any constraint on what values they can take. We can add a term to the loss function which includes this inductive bias into the model. 
+
+1. For a given motif, collect a set of internal representations corresponding to its occurrence in different proteins.
+2. Compute the persistent homology for each of these to generate a set of persistence diagrams.
+3. Compute a "reference" persistence diagram for the motif, either by averaging the above diagrams using the Fréchet mean diagram or by some other method.
+4. For each occurrence of the motif, compute the Wasserstein distance between its persistence diagram and the reference diagram.
+5. Average these distances to compute a single loss value for the motif.
+6. Repeat this process for each motif of interest and sum the results to produce the final topological loss term.
+
+This term can be added to the overall model loss, alongside any other terms used to train the model (such as cross-entropy loss for predicting the next amino acid in a protein sequence). By minimizing this combined loss, the model will be encouraged to develop internal representations that consistently capture the invariant features of each motif, as encoded by their persistent homology.
+
+To further include invariant persistent homology as an inductive bias:
+
+1. Custom Layers: We could design custom layers that directly use the concept of persistent homology. These layers could be trained to output similar embeddings when the same motif is fed into the model, regardless of the protein in which the motif is embedded. Remember, this does not constrain the values of the hidden states, only their relative distances do one another (and thus their persistent homology). 
+2. Multi-task Learning: We could design a multi-task learning setup where one task is to predict some property of the protein and the other is to minimize the variance of the persistent homology of a motif's internal representations across different contexts.
+3. Contrastive Learning: We could use a contrastive learning approach, where pairs of internal representations of the same motif in different contexts are pushed to be similar (small Wasserstein distance), while representations of different motifs are pushed to be different (large Wasserstein distance).
+
 
 
 ## Future Directions
