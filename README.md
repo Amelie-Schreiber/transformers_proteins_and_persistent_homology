@@ -16,7 +16,7 @@ As part of our project, we will incorporate persistent homology, a concept from 
 
 ## Model Interpretability
 
-Our project is not only about modeling proteins but also about interpreting these models. We aim to understand how attention mechanisms in transformer models learn to recognize and represent biologically significant information. We're inspired by the study "[BERTology Meets Biology: Interpreting Attention in Protein Language Models](https://arxiv.org/abs/2006.15222)", which demonstrated that transformer models can specialize in detecting various protein features, from individual amino acids to complex structures like binding sites.
+Our project is not only about modeling proteins but also about interpreting these models. We aim to understand how attention mechanisms in transformer models learn to recognize and represent biologically significant information. We're inspired by the study "[BERTology Meets Biology: Interpreting Attention in Protein Language Models](https://arxiv.org/abs/2006.15222)", which demonstrated that transformer models can specialize in detecting various protein features, from individual amino acids to complex structures like binding sites. We approach the problems of understanding attention, context vectors, and hidden states in this project, using the tools of persistent homology, multi-scale DBSCAN, and HDBSCAN, to analyze what regions of proteins ESM-2's heads and layers are paying attention to, how the model's heads and layers are clustering those regions at different scales, and how the model clusters collections of proteins. This interpretability aspect of the project can aid in the design of specialized heads or in knowledge distillation procedures.  
 
 ## Notebooks
 
