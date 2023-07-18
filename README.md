@@ -1,8 +1,9 @@
-# Transformers, Proteins, and Persistent Homology
 
 ---
 
-# Protein Topic Modeling with Transformers and Persistent Homology
+# ESMTopic: Transformers, Proteins, and Persistent Homology
+
+---
 
 ## Introduction
 
