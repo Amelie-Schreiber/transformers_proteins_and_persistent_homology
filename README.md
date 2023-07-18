@@ -44,7 +44,7 @@ Our project is an ongoing effort, and we aim to further expand our understanding
 1. Investigating topological changes in protein structures under mild sequence mutations.
 2. Understanding the impact of protein sequence changes on conformational states.
 3. Developing topological inductive biases for fine-tuning ESMFold for generative protein diffusion models (denoising diffusion probabilistic model or DDPM) and downstream tasks like detection of point mutations that cause topological changes. 
-4. Exploring the potential of quantum computing for speeding up computations in high-dimensional homology groups (see [this paper](https://quantum-journal.org/views/qv-2023-01-26-70/), [this paper](https://arxiv.org/abs/2202.12965), and [this paper](https://www.nature.com/articles/ncomms10138)) .
+4. Exploring the potential of quantum computing for speeding up computations in high-dimensional homology groups (see [this paper](https://quantum-journal.org/papers/q-2022-12-07-873/), [this paper](https://arxiv.org/abs/2202.12965), and [this paper](https://www.nature.com/articles/ncomms10138)) .
 
 By integrating insights from transformer models, persistent homology, and other computational tools, we hope to deepen our understanding of the complex language of life encoded in proteins.
 
