@@ -5,6 +5,9 @@
 
 ---
 
+![Substructure of KaiB]([http://url/to/img.png](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/KaiB.png))
+
+
 ## Introduction
 
 This project is focused on developing a topic modeling tool for proteins, inspired by the [BERTopic](https://maartengr.github.io/BERTopic/index.html) model used in natural language processing. Our objective is to leverage hierarchical clustering algorithms and the ESM-2/ESMFold transformer models to generate a "topic model" for proteins. Here, a "topic" can be considered a phenotype, tertiary structure, or functional modeling attribute that reflects important characteristics such as secondary structure arrangements, binding sites, or other features in the language of life. We plan to eventually incorporate other protein language models into this approach.
