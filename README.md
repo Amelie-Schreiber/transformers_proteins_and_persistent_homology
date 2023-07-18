@@ -30,7 +30,7 @@ These notebooks use the last hidden states of the model.
 3. [Clustering Proteins](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/clustering_esm2_pipeline.ipynb): This is similar to text corpus and document clustering based on the themes present in the texts. It often captures tertiary structural themes, conformational states, and topology and groups proteins based on this.
 
 <img src="https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/cluster7.png
-" alt="Substructure of KaiB" width="500"/>
+" alt="Cluster 7 of ESM-2" width="400"/>
 
 
 ### Model Interpretability
