@@ -5,7 +5,7 @@
 
 ---
 
-![Substructure of KaiB](http://url/to/img.png](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/KaiB.png))
+![Substructure of KaiB](https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/KaiB.png)
 
 
 ## Introduction
