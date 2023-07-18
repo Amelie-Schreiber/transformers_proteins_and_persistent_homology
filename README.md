@@ -1,7 +1,7 @@
 ---
 
 # ESMTopic: Transformers, Proteins, and Persistent Homology
-## Topic Modeling for Proteins and Model Interpretability Project
+## Topic Modeling for Proteins, Model Interpretability, and Topological Inductive Biases
 ---
 
 <img src="https://github.com/Amelie-Schreiber/transformers_proteins_and_persistent_homology/blob/main/KaiB.png" alt="Substructure of KaiB" width="400"/>
