@@ -107,7 +107,7 @@ $$
 where $\gamma$ ranges over all bijections between the two diagrams (along with the diagonal if necessary); or equivalently as 
 
 $$
-d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M) = \left(\inf\{\gamma\in \Gamma (\mathcal{D}_P, \mathcal{D}_M)\}\int_{\mathcal{D}_P \times \mathcal{D}_M } ||x - y||_p^q \gamma (x, y)\right)^{1/q}
+d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M) = \left(\inf_{\gamma\in \Gamma (\mathcal{D}_P, \mathcal{D}_M)}\int_{\mathcal{D}_P \times \mathcal{D}_M} ||x - y||_p^q \gamma (x, y)\right)^{1/q}
 $$
 
 where $\Gamma(\mathcal{D}_P, \mathcal{D}_M)$ is the set of all joint measures on $\mathcal{D}_P \times \mathcal{D}_M$ with marginals respectively $\mathcal{D}_P$ and $\mathcal{D}_M$. The $||x - y||^q_p$ denotes the $L_p$-norm raised to the power $q$. 
@@ -115,7 +115,7 @@ where $\Gamma(\mathcal{D}_P, \mathcal{D}_M)$ is the set of all joint measures on
 The loss function used to train the model, $L_{\text{total}}$, can be augmented by a term $\lambda W(\mathcal{D}_P, \mathcal{D}_M)$, with $\lambda > 0$ being a hyperparameter. Thus, we have:
 
 $$
-L_{\text{total}} = L_{\text{task}} + \lambda d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M)
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{task}} + \lambda d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M)
 $$
 
 where $L_{\text{task}}$ is the base loss function, such as the negative log-likelihood. By minimizing $L_{\text{total}}$, the DDPM learns to generate protein sequences where the topological features of key motifs remain invariant, thus enhancing the biological plausibility of generated sequences. It is worth noting that this approach increases the complexity of model training, hence necessitating efficient algorithms for persistence diagram computation and optimal transport problem solving.
