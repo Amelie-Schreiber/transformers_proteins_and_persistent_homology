@@ -101,13 +101,13 @@ Incorporating a topological inductive bias into a generative diffusion model, sp
 Formally, the Wasserstein distance is defined as: 
 
 $$
-d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}M) = \left( \inf_{\gamma : \mathcal{D}_P \rightarrow \mathcal{D}_M} \sum{x \in \mathcal{D}_P} ||x - \gamma(x)||^q_p \right)^{1/q}
+d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M) = \left( \inf_{\gamma : \mathcal{D}_P \rightarrow \mathcal{D}_M} \sum_{x \in \mathcal{D}_P} ||x - \gamma(x)||^q_p \right)^{1/q}
 $$
 
 where $\gamma$ ranges over all bijections between the two diagrams (along with the diagonal if necessary); or equivalently as 
 
 $$
-d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M) = \left(\inf_{\gamma\in \Gamma (\mathcal{D}_P, \mathcal{D}_M)}\int_{\mathcal{D}_P \times \mathcal{D}_M } ||x - y||_p^q \gamma (x, y)\right)^{1/q}
+d^{\mathcal{W}}_{p, q}(\mathcal{D}_P, \mathcal{D}_M) = \left(\inf\{\gamma\in \Gamma (\mathcal{D}_P, \mathcal{D}_M)\}\int_{\mathcal{D}_P \times \mathcal{D}_M } ||x - y||_p^q \gamma (x, y)\right)^{1/q}
 $$
 
 where $\Gamma(\mathcal{D}_P, \mathcal{D}_M)$ is the set of all joint measures on $\mathcal{D}_P \times \mathcal{D}_M$ with marginals respectively $\mathcal{D}_P$ and $\mathcal{D}_M$. The $||x - y||^q_p$ denotes the $L_p$-norm raised to the power $q$. 
